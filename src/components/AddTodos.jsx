@@ -21,9 +21,9 @@ function AddTodo() {
   };
 
   // LOCAL STORAGE FUNCTIONALITY
-  useEffect(() => {
+  useEffect(async () => {
     // Check if todos exist in local storage
-    const todos = JSON.parse(localStorage.getItem("todos"));
+    const todos = await JSON.parse(localStorage.getItem("todos"));
     if (todos && todos.length > 0) {
       dispatch(initTodos(todos));
     } else if (todos.length === 0) {
